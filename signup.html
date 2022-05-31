@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,31 +11,39 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
-    
-    <section>
-        <form action="" method="">
-            <h2>moz://a</h2>
-            <h4>commonvoice.mozilla.org</h4>
-            <input type="email" name="emailAddress" id="emailAddress" placeholder="Log in with email">
-            <input class="btn btn-primary rounded-pill" type="submit" value="Enter">
-            <hr>
-            <span class="loginBtns">
-                <img src="assets/imgs/firefox.svg" alt="firefox">
-            </span>
-            <span class="loginBtns">
-                <img src="assets/imgs/github.svg" alt="github">
-            </span>
-            <span class="loginBtns">
-                <img src="assets/imgs/google.svg" alt="google">
-            </span>
 
-            <div class="bottom-links">
+<body>
+    <section class="login-section d-flex justify-content-center align-items-center py-5">
+        <div class="form-container p-5 bg-white col-lg-4 col-md-7 col-12">
+            <h2 class="mb-4">moz://a</h2>
+            <form class="d-flex flex-column" action="" method="">
+                <h6>commonvoice.mozilla.org</h6>
+                <div>
+                    <input type="email" name="emailAddress" id="emailAddress">
+                    <label for="emailAddress">Log in with email</label>
+                    <input class="btn rounded-pill" type="submit" value="Enter">
+                </div>
+                <hr>
+                <button class="loginBtns">
+                    <img src="assets/imgs/firefox.svg" alt="firefox">
+                    <span>Log in with Firefox</span>
+                </button>
+                <button class="loginBtns">
+                    <img class="github-icon-default" src="assets/imgs/github.svg" alt="github">
+                    <img class="github-icon-white" src="assets/imgs/github-white.svg" alt="github">
+                    <span>Log in with GitHub</span>
+                </button>
+                <button class="loginBtns">
+                    <img src="assets/imgs/google.svg" alt="google">
+                    <span>Log in with Google</span>
+                </button>
+            </form>
+            <div class="bottom-links mt-5 d-flex justify-content-between">
                 <a href="#">Legal</a>
                 <a href="#">Privacy</a>
                 <a href="#">Need help?</a>
             </div>
-        </form>
+        </div>
     </section>
 
     <!-- Javascript -->
@@ -45,4 +54,5 @@
     <!-- Custom JS -->
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>

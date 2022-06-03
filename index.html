@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>commonvoice.mozilla.org</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/imgs/favicon.ico" type="image/x-icon">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container d-flex align-items-center justify-content-between">
+            <div class="header-left d-flex justify-content-between align-items-center">
+                <div class="logo">
+                    <img class="logo" src="assets/imgs/cv-logo-black.svg" alt="common voice logo">
+                </div>
+                <nav class="d-flex">
+                    <a class="nav-link" href="#">Contribute</a>
+                    <a class="nav-link" href="#">Datasets</a>
+                    <a class="nav-link" href="#">Languages</a>
+                    <a class="nav-link" href="#">About</a>
+                </nav>
+            </div>
+            <div class="header-right d-flex justify-content-between">
+                <div class="count d-flex flex-md-row flex-column align-items-center">
+                    <a href="#" class="nav-link">
+                        <span class="speaking-count">
+                            <img src="assets/imgs/microphone.svg" alt="speak">
+                            <span>0</span>
+                        </span>
+                    </a>
+                    <span class="divider"></span>
+                    <a href="#" class="nav-link">
+                        <span class="listening-count">
+                            <img src="assets/imgs/play.svg" alt="listen">
+                            <span>0</span>
+                        </span>
+                    </a>
+                </div>
+                <button class="btn rounded-pill ms-5">Log In / Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+
+    <section class="hero-section d-flex flex-lg-row flex-column justify-content-center">
+        <div class="hero-box speak d-flex justify-content-center">
+            <div class="column title">
+                <h1>Speak</h1>
+                <h3><span>Donate your voice</span></h3>
+                <div class="toggleable" style="width: 0px; height: 0px;">
+                    <p class="description">Recording voice clips is an integral part of building our open dataset; some
+                        would say it's the fun part too.</p><a class="terms" href="/en/terms">Have you read our
+                        Terms?</a>
+                </div>
+            </div>
+            <div class="column cta">
+                <div
+                    class="primary-button stop track-fs-speak-from-home d-flex align-items-center justify-content-center mx-5">
+                    <a class="d-flex align-items-center justify-content-center" href="#">
+                        <svg width="29" height="28" viewBox="0 0 29 28">
+                            <defs>
+                                <path id="mic-path2"
+                                    d="M9.333 18.667A4.68 4.68 0 0 0 14 14V4.667A4.68 4.68 0 0 0 9.333 0a4.68 4.68 0 0 0-4.666 4.667V14a4.68 4.68 0 0 0 4.666 4.667zM7 4.667a2.34 2.34 0 0 1 2.333-2.334 2.34 2.34 0 0 1 2.334 2.334V14a2.34 2.34 0 0 1-2.334 2.333A2.34 2.34 0 0 1 7 14V4.667zm11.667 7V14c0 4.783-3.617 8.633-8.167 9.217v2.45H14c.7 0 1.167.466 1.167 1.166S14.7 28 14 28H4.667c-.7 0-1.167-.467-1.167-1.167s.467-1.166 1.167-1.166h3.5v-2.45C3.617 22.633 0 18.667 0 14v-2.333c0-.7.467-1.167 1.167-1.167s1.166.467 1.166 1.167V14c0 3.85 3.15 7 7 7s7-3.15 7-7v-2.333c0-.7.467-1.167 1.167-1.167s1.167.467 1.167 1.167z">
+                                </path>
+                            </defs>
+                            <g fill="none" fill-rule="evenodd" transform="translate(5)">
+                                <mask id="mic-mask2" fill="#fff">
+                                    <use xlink:href="#mic-path2"></use>
+                                </mask>
+                                <use xlink:href="#mic-path2"></use>
+                                <g fill="#FF4F5E" mask="url(#mic-mask2)">
+                                    <path d="M-5 0h28v28H-5z"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </a>
+                    <div class="background"></div>
+                </div>
+                <div class="toggleable line speak" style="width: 0px; height: 0px;"></div>
+                <div class="toggleable " style="width: 0px; height: 0px;">
+                    <div class="cta-message">Help us get to 1,200</div>
+                </div>
+            </div>
+            <div class="toggleable progress column" style="width: 0px; height: 0px;">
+                <h3 class="progress-title">Today's Progress</h3><span class="progress-count"><span
+                        class="current">232</span><span class="total"> / 1200</span></span>
+                <p><i>Clips recorded</i></p>
+            </div>
+            <div class="fading"></div>
+        </div>
+        <div class="hero-box listen d-flex juustify-content-center">
+            <div class="column title">
+                <h1>Listen</h1>
+                <h3><span>Help us validate voices</span></h3>
+                <div class="toggleable " style="width: 0px; height: 0px;">
+                    <p class="description">Validating donated clips is equally important to the Common Voice
+                        mission. Take a listen and help us create quality open source voice data.</p><a class="terms"
+                        href="/en/terms">Have you read our Terms?</a>
+                </div>
+            </div>
+            <div class="column cta">
+                <div
+                    class="primary-button play track-fs-listen-from-home d-flex align-items-center justify-content-center mx-5">
+                    <a href="#" class="d-flex align-items-center justify-content-center">
+                        <svg viewBox="0 0 13 15">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="icon-/-play" fill="#59cbb7">
+                                    <path
+                                        d="M0.978009259,0 C1.03819475,0 1.09587164,0.00733847847 1.15104167,0.0220156556 C1.2062117,0.0366928327 1.2613809,0.0538159491 1.31655093,0.0733855186 C1.37172095,0.0929550881 1.42438247,0.117416683 1.47453704,0.146771037 L12.5486111,6.7074364 C12.6388893,6.75636032 12.7191355,6.82240663 12.7893519,6.9055773 C12.8595683,6.98874797 12.9122298,7.08170203 12.947338,7.18444227 C12.9824462,7.28718251 13,7.39236737 13,7.5 C13,7.85225225 12.8495385,8.11643748 12.5486111,8.2925636 L1.45949074,14.853229 C1.38927434,14.9021529 1.31153592,14.9388453 1.22627315,14.9633072 C1.14101038,14.9877692 1.05324119,15 0.962962963,15 C0.882715648,15 0.802469537,14.9902154 0.722222222,14.9706458 C0.641974907,14.9510762 0.566744178,14.9217223 0.496527778,14.8825832 C0.165507604,14.6966723 0,14.4227024 0,14.0606654 L0.0150462963,0.939334638 C0.0150462963,0.577297603 0.1805539,0.30332774 0.511574074,0.11741683 C0.652006875,0.0391385519 0.807483715,0 0.978009259,0 Z"
+                                        id="play-button"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </a>
+                    <div class="background"></div>
+                </div>
+                <div class="toggleable line listen" style="width: 0px; height: 0px;"></div>
+                <div class="toggleable " style="width: 0px; height: 0px;">
+                    <div class="cta-message">Help us get to 2,400</div>
+                </div>
+            </div>
+            <div class="toggleable progress column" style="width: 0px; height: 0px;">
+                <h3 class="progress-title">Today's Progress</h3><span class="progress-count"><span
+                        class="current">499</span><span class="total"> / 2400</span></span>
+                <p><i>Clips validated</i></p>
+            </div>
+            <div class="fading"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+
+    <section class="about-section">
+        <div class="text">
+            <div class="inner row justify-content-center">
+                <div class="title col-lg-5 col-md-6">
+                    <h1>Mozilla Common Voice is an initiative to help teach machines how real people speak.</h1>
+                </div>
+                <div class="description col-lg-4 col-md-6">
+                    <p>Voice is natural, voice is human. That’s why we’re excited about creating usable voice technology
+                        for our machines. But to create voice systems, developers need an extremely large amount of
+                        voice
+                        data.
+                    </p>
+                    <p>Most of the data used by large companies isn’t available to the majority of people. We think that
+                        stifles innovation. So we’ve launched Common Voice, a project to help make voice recognition
+                        open
+                        and accessible to everyone.
+                    </p>
+                    <button class="show-more btn" type="button">Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="stats container-fluid">
+            <div class="stats-cards row justify-content-center px-2">
+                <div class="home-card mb-lg-0 mb-md-5 me-lg-5 me-md-0">
+                    <div class="head d-flex justify-content-between flex-md-row flex-column">
+                        <div class="metrics d-flex">
+                            <div class="metric d-flex justify-content-between flex-column">
+                                <div class="label">Hours Recorded</div>
+                                <div class="metric-value d-flex align-items-center total" title="19,928h">
+                                    <div class="point">●</div>20k
+                                </div>
+                            </div>
+                            <div class="metric d-flex justify-content-between flex-column">
+                                <div class="label">Hours Validated</div>
+                                <div class="metric-value d-flex align-items-center valid" title="14,481h">
+                                    <div class="point">●</div>14k
+                                </div>
+                            </div>
+                        </div>
+                        <div class="language-select" role="combobox" aria-expanded="false" aria-haspopup="listbox"
+                            aria-labelledby="downshift-0-label">
+                            <div class="bg-white current border rounded-pill text-uppercase">All</div>
+                        </div>
+                    </div>
+                    <div class="" data-tooltipped="" aria-describedby="tippy-tooltip-1" style="display: inline;"><svg
+                            width="100%" height="100%" class="plot"><text class="tick-label" x="40" y="10"
+                                dominant-baseline="middle" text-anchor="end">20k</text>
+                            <line x1="45" y1="10" x2="523" y2="10" stroke="rgba(0,0,0,0.2)"></line><text
+                                class="tick-label" x="40" y="32" dominant-baseline="middle" text-anchor="end">17k</text>
+                            <line x1="45" y1="32" x2="523" y2="32" stroke="rgba(0,0,0,0.2)"></line><text
+                                class="tick-label" x="40" y="54" dominant-baseline="middle" text-anchor="end">14k</text>
+                            <line x1="45" y1="54" x2="523" y2="54" stroke="rgba(0,0,0,0.2)"></line><text
+                                class="tick-label" x="40" y="76" dominant-baseline="middle" text-anchor="end">10k</text>
+                            <line x1="45" y1="76" x2="523" y2="76" stroke="rgba(0,0,0,0.2)"></line><text
+                                class="tick-label" x="40" y="98" dominant-baseline="middle"
+                                text-anchor="end">6.8k</text>
+                            <line x1="45" y1="98" x2="523" y2="98" stroke="rgba(0,0,0,0.2)"></line><text
+                                class="tick-label" x="40" y="120" dominant-baseline="middle"
+                                text-anchor="end">3.4k</text>
+                            <line x1="45" y1="120" x2="523" y2="120" stroke="rgba(0,0,0,0.2)"></line><text
+                                class="tick-label" x="40" y="142" dominant-baseline="middle" text-anchor="end">0</text>
+                            <line x1="45" y1="142" x2="523" y2="142" stroke="rgba(0,0,0,0.2)"></line><text
+                                class="x tick-label" x="45" y="164">1y</text><text class="x tick-label" x="136.4"
+                                y="164">9mo</text><text class="x tick-label" x="227.8" y="164">6mo</text><text
+                                class="x tick-label" x="319.20000000000005" y="164">3mo</text><text class="x tick-label"
+                                x="410.6" y="164">Today</text>
+                            <path
+                                d="M58 77.4492362745098C75.81914843951338, 75.87438508042335, 130.11379848917056, 71.08776395714838, 165.75, 67.9263223856209S237.784686639137, 61.012977093014285, 273.5, 58.331299183006536S345.42725507920505, 53.5798102780351, 381.25, 51.74554346405229S471.07222699800855, 48.03703157613697, 489, 47.296843300653585"
+                                class="valid" fill="none" stroke-width="2"></path>
+                            <circle cx="489" cy="47.296843300653585" r="8" fill="white" class="outer valid"></circle>
+                            <circle cx="489" cy="47.296843300653585" r="6" class="inner valid"></circle>
+                            <path
+                                d="M58 61.4014297385621C75.73323491074945, 59.40350000863682, 130.38180713997784, 53.666061882175065, 165.75, 49.261685947712415S238.11195342339425, 38.890507388367695, 273.5, 34.56536781045751S345.72121669993885, 26.635479845526007, 381.25, 22.923199673202618S471.22274375592957, 13.842687377268696, 489, 12.048515196078425"
+                                class="total" fill="none" stroke-width="2"></path>
+                            <circle cx="489" cy="12.048515196078425" r="8" fill="white" class="outer total"></circle>
+                            <circle cx="489" cy="12.048515196078425" r="6" class="inner total"></circle>
+                        </svg></div>
+                </div>
+                <div class="home-card scrollable">
+                    <div class="head d-flex justify-content-between flex-md-row flex-column">
+                        <div>
+                            <h3>Voices Online Now</h3>
+                            <div class="online-voices">269</div>
+                        </div>
+                        <div class="language-select" role="combobox" aria-expanded="false" aria-haspopup="listbox"
+                            aria-labelledby="downshift-1-label">
+                            <div class="bg-white current border rounded-pill text-uppercase">All</div>
+                        </div>
+                    </div><svg width="100%" height="100%" class="plot"><text class="tick-label" x="40" y="10"
+                            dominant-baseline="middle" text-anchor="end">2k</text>
+                        <line x1="45" y1="10" x2="523" y2="10" stroke="rgba(0,0,0,0.2)"></line><text class="tick-label"
+                            x="40" y="48.5" dominant-baseline="middle" text-anchor="end">1k</text>
+                        <line x1="45" y1="48.5" x2="523" y2="48.5" stroke="rgba(0,0,0,0.2)"></line><text
+                            class="tick-label" x="40" y="87" dominant-baseline="middle" text-anchor="end">667</text>
+                        <line x1="45" y1="87" x2="523" y2="87" stroke="rgba(0,0,0,0.2)"></line><text class="tick-label"
+                            x="40" y="125.5" dominant-baseline="middle" text-anchor="end">0</text>
+                        <line x1="45" y1="125.5" x2="523" y2="125.5" stroke="rgba(0,0,0,0.2)"></line><text
+                            class="x tick-label" x="45" y="164">09AM</text><text class="x tick-label" x="90.7"
+                            y="164">10AM</text><text class="x tick-label" x="136.4" y="164">11AM</text><text
+                            class="x tick-label" x="182.10000000000002" y="164">12PM</text><text class="x tick-label"
+                            x="227.8" y="164">01PM</text><text class="x tick-label" x="273.5" y="164">02PM</text><text
+                            class="x tick-label" x="319.20000000000005" y="164">03PM</text><text class="x tick-label"
+                            x="364.90000000000003" y="164">04PM</text><text class="x tick-label" x="410.6"
+                            y="164">05PM</text><text class="x tick-label" x="456.3" y="164">06PM</text>
+                        <rect class="bg" x="50.5" y="10" width="15" height="115.5"></rect>
+                        <rect class="bg" x="96.2" y="10" width="15" height="115.5"></rect>
+                        <rect class="bg" x="141.9" y="10" width="15" height="115.5"></rect>
+                        <rect class="bg" x="187.6" y="10" width="15" height="115.5"></rect>
+                        <rect class="bg" x="233.3" y="10" width="15" height="115.5"></rect>
+                        <rect class="bg" x="279" y="10" width="15" height="115.5"></rect>
+                        <rect class="bg" x="324.7" y="10" width="15" height="115.5"></rect>
+                        <rect class="bg" x="370.4" y="10" width="15" height="115.5"></rect>
+                        <rect class="bg" x="416.1" y="10" width="15" height="115.5"></rect>
+                        <rect class="bg" x="461.8" y="10" width="15" height="115.5"></rect>
+                        <defs>
+                            <linearGradient id="blue-purple" x2="0%" y2="100%">
+                                <stop offset="5%" stop-color="#88d1f1"></stop>
+                                <stop offset="95%" stop-color="#b1b5e5"></stop>
+                            </linearGradient>
+                        </defs>
+                        <rect fill="url(#blue-purple)" class="" x="50.5" y="60.41575" width="15" height="65.08425">
+                        </rect>
+                        <rect fill="url(#blue-purple)" class="" x="96.2" y="81.66775" width="15" height="43.83225">
+                        </rect>
+                        <rect fill="url(#blue-purple)" class="" x="141.9" y="83.689" width="15" height="41.811"></rect>
+                        <rect fill="url(#blue-purple)" class="" x="187.6" y="91.71625" width="15" height="33.78375">
+                        </rect>
+                        <rect fill="url(#blue-purple)" class="" x="233.3" y="91.543" width="15" height="33.957"></rect>
+                        <rect fill="url(#blue-purple)" class="" x="279" y="93.7375" width="15" height="31.7625"></rect>
+                        <rect fill="url(#blue-purple)" class="" x="324.7" y="97.02925" width="15" height="28.47075">
+                        </rect>
+                        <rect fill="url(#blue-purple)" class="" x="370.4" y="101.30275" width="15" height="24.19725">
+                        </rect>
+                        <rect fill="url(#blue-purple)" class="" x="416.1" y="101.3605" width="15" height="24.1395">
+                        </rect>
+                        <rect fill="url(#blue-purple)" class="current" x="461.8" y="109.96525" width="15"
+                            height="15.53475">
+                        </rect>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contribute Section -->
+
+    <section class="register-section mt-5 px-3">
+        <div class="top mx-auto d-flex justify-content-between align-items-lg-start align-items-center flex-lg-row flex-column">
+            <div class="cta-container d-md-flex text-center flex-md-column align-items-md-center">
+                <h1>Help us build a high quality, publicly open dataset</h1>
+                <h2>Having a profile is not required to contribute though it is helpful, see why below.</h2>
+                <a class="button rounded-pill border-0 d-flex align-items-center text-center justify-content-center w-100 position-relative text-decoration-none" href="signup.html">Sign up for an account</a>
+                <div class="signup-info">
+                    <div class="tabs d-flex text-uppercase position-relative">
+                        <img class="waves" src="assets/imgs/waves.png" alt="Waves">
+                        <label>
+                            <input type="radio" name="tab" checked="">
+                            <div>Benefits</div>
+                        </label>
+                        <label><input type="radio" name="tab">
+                            <div>What's Public?</div>
+                        </label>
+                    </div>
+                    <div class="list-and-bg">
+                        <div class="bg"></div>
+                        <ul>
+                            <li class="active">
+                                <span>1.</span><span>Make your submitted data as rich as possible by
+                                    providing some anonymous demographic data. We de-identify all demographic data
+                                    before making it public.</span>
+                            </li>
+                            <li>
+                                <span>2.</span><span>Profile information improves the audio data used in
+                                    training speech recognition accuracy.</span>
+                            </li>
+                            <li>
+                                <span>3.</span><span>Keep track of your progress and metrics across multiple
+                                    languages.</span>
+                            </li>
+                            <li>
+                                <span>4.</span><span>See how your progress compares to other contributors all
+                                    over the world.</span>
+                            </li>
+                            <li>
+                                <span>5.</span><span>View your progress against personal and project
+                                    goals.</span>
+                            </li>
+                            <li>
+                                <span>6.</span><span>Optionally join on our email list for updates and new
+                                    information about the project.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="images-container d-flex flex-column align-items-center position-relative">
+                <img class="mars" src="assets/imgs/mars.svg" alt="Mars">
+                <img class="screenshot mt-5 d-md-block d-none" src="assets/imgs/1-1.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+        <div id="help-links" class="d-flex justify-content-center align-items-center">
+            <a class="nav-link" href="#">
+                <img src="assets/imgs/support.svg" title="support">
+                <div>FAQ</div>
+            </a>
+            <div class="divider"></div>
+            <a class="nav-link" target="blank" href="https://discourse.mozilla.org/c/voice" id="discourse"><img
+                    src="assets/imgs/discourse.svg" title="">
+                <div>Discourse</div>
+            </a>
+            <div class="divider"></div>
+            <button type="button" class="text-button ">
+                <img src="assets/imgs/contact.svg" title="">
+                <div>Contact</div>
+            </button>
+        </div>
+        <div id="moz-links" class="d-flex flex-lg-row flex-column-reverse justify-content-md-between align-items-center">
+            <div class="logo-container d-flex flex-lg-column flex-row justify-content-between">
+                <a class="Logo" href="#">
+                    <img class="LogoImage" src="assets/imgs/cv-logo-white.svg" alt="Mozilla Common Voice"></a>
+                <p class="license">
+                    <span>Content available under a <a target="_blank" rel="noopener noreferrer" href="https://www.mozilla.org/en-US/foundation/licensing/website-content/">Creative Commons license</a></span>
+                </p>
+            </div>
+            <div class="divider-bottom"></div>
+            <div class="links">
+                <div>
+                    <a href="#">Privacy</a><a href="#">Terms</a>
+                    <a target="_blank" href="https://www.mozilla.org/en-US/privacy/websites/#cookies" rel="noopener noreferrer">Cookies</a>
+                </div>
+                <div class="divider-vertical"></div>
+                <div>
+                    <a href="#">FAQ</a>
+                    <a target="_blank" href="https://github.com/mozilla/common-voice" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+            <div id="sharing">
+                <span class="title">Help us find others to donate their voice!</span>
+                <div class="icons">
+                    <button id="link-copy" class="share-button">
+                        <input type="hidden" readonly="" value="https://commonvoice.mozilla.org">
+                        <span aria-hidden="true"><i class="fa fa-link"></i></span>
+                    </button>
+                    <a class="share-button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcommonvoice.mozilla.org" target="_blank" rel="noopener noreferrer">
+                        <span aria-hidden="true"><i class="fab fa-facebook-square"></i></span>
+                    </a>
+                    <a class="share-button" href="https://twitter.com/intent/tweet?text=Help%20teach%20machines%20how%20real%20people%20speak%2C%20donate%20your%20voice%20at%20https%3A%2F%2Fcommonvoice.mozilla.org" target="_blank" rel="noopener noreferrer">
+                        <span aria-hidden="true"><i class="fab fa-twitter"></i></span>
+                    </a>
+                </div>
+            </div>
+            <div id="email-subscription">
+                <form class="subscribe-newsletter">
+                    <div class="goal-title">Sign up for Common Voice newsletters, goal reminders and progress updates</div>
+                    <div class="submittable-field">
+                        <input class="" type="email" name="email" placeholder="Enter your email" required="" value="">
+                        <button type="submit" class="submit-button"><svg viewBox="0 0 13 15" class="icon">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g id="icon-/-play" fill="#B7D43F">
+                                        <path d="M0.978009259,0 C1.03819475,0 1.09587164,0.00733847847 1.15104167,0.0220156556 C1.2062117,0.0366928327 1.2613809,0.0538159491 1.31655093,0.0733855186 C1.37172095,0.0929550881 1.42438247,0.117416683 1.47453704,0.146771037 L12.5486111,6.7074364 C12.6388893,6.75636032 12.7191355,6.82240663 12.7893519,6.9055773 C12.8595683,6.98874797 12.9122298,7.08170203 12.947338,7.18444227 C12.9824462,7.28718251 13,7.39236737 13,7.5 C13,7.85225225 12.8495385,8.11643748 12.5486111,8.2925636 L1.45949074,14.853229 C1.38927434,14.9021529 1.31153592,14.9388453 1.22627315,14.9633072 C1.14101038,14.9877692 1.05324119,15 0.962962963,15 C0.882715648,15 0.802469537,14.9902154 0.722222222,14.9706458 C0.641974907,14.9510762 0.566744178,14.9217223 0.496527778,14.8825832 C0.165507604,14.6966723 0,14.4227024 0,14.0606654 L0.0150462963,0.939334638 C0.0150462963,0.577297603 0.1805539,0.30332774 0.511574074,0.11741683 C0.652006875,0.0391385519 0.807483715,0 0.978009259,0 Z" id="play-button"></path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                    <label class="labeled-checkbox">
+                        <span class="checkbox-container">
+                            <input type="checkbox">
+                            <svg width="24" height="24" viewBox="0 0 24 24" class="checkmark">
+                                <defs>
+                                    <path id="check-path1" d="M17.7 1.7l-11 11c-.2.2-.4.3-.7.3-.3 0-.5-.1-.7-.3l-5-5c-.4-.4-.4-1 0-1.4.4-.4 1-.4 1.4 0L6 10.6 16.3.3c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4z"></path>
+                                </defs>
+                                <g fill="none" fill-rule="evenodd" transform="translate(3 6)">
+                                    <mask id="check-mask1" fill="#fff">
+                                        <use xlink:href="#check-path1"></use>
+                                    </mask>
+                                    <g fill="currentColor" mask="url(#check-mask1)">
+                                        <path d="M-3-6h24v24H-3z"></path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </span>
+                        <span class="label">
+                            <span>I'm okay with you handling this info as you explain
+                                in Mozilla's <a class="text-decoration-none" target="_blank" rel="noopener noreferrer" href="#">Privacy Policy</a>
+                            </span>
+                        </span>
+                    </label>
+                </form>
+            </div>
+            <button type="button" class="text-button back-top">Back to Top</button>
+        </div>
+    </footer>
+
+    <!-- Javascript -->
+    <!-- Jquery -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <!-- FontAwesome -->
+    <script src="assets/fontawesome/js/all.min.js"></script>
+    <!-- Bootstarp JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

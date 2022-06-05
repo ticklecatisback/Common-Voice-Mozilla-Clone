@@ -15,11 +15,21 @@
   font-family: "Open Sans", sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Zilla Slab", "Georgia", "Utopia", "Charter", serif;
+}
+
 /* Landing page */
 
 .header {
   border-bottom: 1px solid #f3f2f0;
   padding: 1rem;
+  z-index: 10;
+  width: 100%;
+  position: relative;
 }
 
 .header .logo img {
@@ -71,18 +81,113 @@
   color: black;
   padding: 0.5rem 1rem;
   font-family: "Open Sans", sans-serif;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+#hamburger-menu {
+  border: none;
+  min-height: 20px;
+  min-width: 20px;
+  padding: 0;
+  background-color: unset;
+}
+
+.menu-icon {
+  transform: scale(2);
+}
+
+.mobile-nav a {
+  color: black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 30px 0;
+}
+
+.mobile-nav {
+  z-index: 5;
+  padding: 50px 0;
+  min-height: 100vh;
+  width: 100%;
+  top: 0;
+  transform: translateY(-100vh);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: fixed;
+  background-color: white;
+  -webkit-transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  -moz-transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  -ms-transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  -o-transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transform: translateY(-100vh);
+  -moz-transform: translateY(-100vh);
+  -ms-transform: translateY(-100vh);
+  -o-transform: translateY(-100vh);
+}
+
+.mobile-nav.active {
+  display: block;
+  pointer-events: all;
+  transform: translateY(0);
+  transition-duration: 0.5s;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+}
+
+.menu-icon {
+  transform: scale(2);
+}
+.menu-icon rect {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  -moz-transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  -ms-transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  -o-transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.menu-icon.active .left {
+  transform: translateX(-4px);
+}
+.menu-icon.active .right {
+  transform: translateX(4px);
+}
+
+.mobile-nav nav {
+  padding: 0 30px;
+}
+
+.btn {
+  box-shadow: none !important;
+}
+
+.mobile-nav .btn {
+  background-color: black;
+  color: white;
+  padding: 14px 0;
+}
+
+.btn-container {
+  background-image: linear-gradient(359deg, white, #f3f2f0);
+  padding: 30px;
+}
+
+@media screen and (max-width: 600px) {
+  .mobile-nav {
+    padding: 80px 0;
+  }
 }
 
 .hero-section .hero-box {
-  min-height: 500px;
+  height: 500px;
   padding: 130px 100px 0;
   width: 100%;
   position: relative;
-  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  -webkit-transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  -moz-transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  -ms-transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  -o-transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  -moz-transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  -ms-transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  -o-transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-section .hero-box:before {
@@ -103,6 +208,16 @@
   -moz-transition: opacity linear 0.5s;
   -ms-transition: opacity linear 0.5s;
   -o-transition: opacity linear 0.5s;
+}
+
+.hero-box h1 {
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.hero-box h3 {
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .hero-section .speak::before {
@@ -164,11 +279,97 @@
   z-index: 1;
 }
 
+.hero-section {
+  border-top: 1px solid #f3f2f0;
+  width: 100vw !important;
+  overflow: hidden;
+}
+
 .hero-box .toggleable {
   opacity: 0;
   transform: translateY(50px);
-  transition: width 0.5s linear, height 0.5s linear, opacity 0.2s,
-    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: width 0.5s linear, height 0.5s linear, opacity 0.2s,    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transform: translateY(50px);
+  -moz-transform: translateY(50px);
+  -ms-transform: translateY(50px);
+  -o-transform: translateY(50px);
+  -webkit-transition: width 0.5s linear, height 0.5s linear, opacity 0.2s,;
+  -moz-transition: width 0.5s linear, height 0.5s linear, opacity 0.2s,;
+  -ms-transition: width 0.5s linear, height 0.5s linear, opacity 0.2s,;
+  -o-transition: width 0.5s linear, height 0.5s linear, opacity 0.2s,;
+}
+
+/* .hero-box .toggleable .description {
+  width: 206px;
+  height: 125px;
+} */
+
+.hero-box .progress {
+  width: 200px;
+  /* height: 370px; */
+  overflow: unset;
+  background-color: unset;
+}
+
+@media screen and (max-width: 1300px) {
+  .hero-section .hero-box {
+    padding: 130px 50px 0;
+  }
+  .hero-box .toggleable .description {
+    width: 160px;
+    height: 100px;
+  }
+  .hero-box .progress {
+    width: 80px;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero-box.active {
+    width: 60%;
+  }
+  .hero-box.compressed {
+    width: 40%;
+  }
+}
+
+@media (max-width: 600px) {
+  .header .count .divider {
+    border-inline-end: 1px solid #e6e5e3;
+    border-top: 1px solid #e6e5e3;
+    height: 1px;
+    width: 50%;
+  }
+  .hero-box .toggleable.description-container .description {
+    width: 0px;
+    height: 0px;
+    transition: all .5s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition: all .5s cubic-bezier(0.4, 0, 0.2, 1);
+    -moz-transition: all .5s cubic-bezier(0.4, 0, 0.2, 1);
+    -ms-transition: all .5s cubic-bezier(0.4, 0, 0.2, 1);
+    -o-transition: all .5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+  .hero-box .description-container.active .description {
+    width: 206px;
+    height: 125px;
+  }
+  .hero-box .toggleable.description-container {
+    order: 1;
+  }
+  .hero-section .hero-box {
+    max-height: 500px;
+    width: 100%;
+    padding: 40px 0 90px;
+  }
+  .hero-box .progress {
+    width: 145px;
+    height: fit-content;
+    order: 2;
+  }
+
+  .hero-box .cta {
+    order: 3;
+  }
 }
 
 .hero-box.active:before {
@@ -232,7 +433,7 @@
   display: block;
   font-size: 14px;
   font-weight: 600;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   text-decoration: underline;
 }
 

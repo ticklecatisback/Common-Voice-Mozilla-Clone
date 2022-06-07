@@ -17,6 +17,50 @@ $(document).ready(function () {
         $('.description-container', this).removeClass('active');
     })
 
+    // Read more 
+    $(".show-more").click(function () {
+        var txt = $(".more-text").is(':visible') ? 'Read More' : 'Read Less';
+        $(".show-more").text(txt);
+        $('.more-text').toggle();
+    });
+
+    $('.tab').click(function() {
+        var tab_id = $(this).attr('href');
+        $(tab_id).addClass('active').siblings().removeClass('active')
+    });
+
+    $(".step").click(function () {
+        $(this).addClass('active')
+        $(this).siblings().removeClass('active')
+    })
+
+    var images = $('#images').find('img');
+
+    //hide images at the beginning
+    images.not(images.first()).hide();
+
+    $(".steps").on("click", 'li', function () {
+        var $this = $(this),
+            $this_val = $this.val();
+
+        images.hide();
+        $("#img" + $this_val).show();
+    });
+
+    // Copy Link
+    var $temp = $("<input>");
+    var $url = $(location).attr('href');
+
+    $('#link-copy').click(function() {
+        $("body").append($temp);
+        $temp.val($url).select();
+        document.execCommand("copy");
+        $temp.remove();
+        $('.copy-link-notification').html('<div class="notification-pill success rounded-pill" style="opacity: 1;"><i class="fa fa-link"></i> <span>Link Copied</span></div>');
+        $('.notification-pill').delay(2000).fadeOut();
+      })
+
+    // Tagify
     var input = document.querySelector('input[name=tags-outside]')
     var tagify = new Tagify(input, {
         dropdown: {

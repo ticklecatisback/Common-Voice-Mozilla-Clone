@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+      /* .nav-tab-active {
+  color: #f00;
+} */
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+    </style>
+  <h2 class="nav-tab-wrapper">
+    <a href="#tab-1" class="nav-tab nav-tab-active">First</a>
+    <a href="#tab-2" class="nav-tab">Second</a>
+    <a href="#tab-3" class="nav-tab">Third</a>
+  </h2>
+  <hr />
+  <section id="tab-1" class="tab-content active">
+    <P>Some content here.</P>
+  </section>
+  <section id="tab-2" class="tab-content">
+    <p>Some more here.</p>
+  </section>
+  <section id="tab-3" class="tab-content">
+    <p>Something else here.</p>
+  </section>
+      <script src="assets/js/jquery-3.6.0.min.js"></script>
+      <script>
+        $('.nav-tab').click(function(e) {
+
+  //Toggle target tab
+  $($(this).attr('href')).addClass('active').siblings().removeClass('active');
+});
+        </script>
+
+</body>
+</html>

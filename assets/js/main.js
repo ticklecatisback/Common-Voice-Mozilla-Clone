@@ -1,3 +1,7 @@
+setTimeout(function(){
+    $('.preloader').delay(2800).fadeOut(); 
+    // $('.preloader_img').delay(150).fadeOut('slow');     
+},2800);
 $(document).ready(function () {
     // Navbar
     $('#hamburger-menu').click(function () {
@@ -25,9 +29,16 @@ $(document).ready(function () {
     });
 
     $('.tab').click(function() {
+        $(this).addClass('active').siblings().removeClass('active');
         var tab_id = $(this).attr('href');
         $(tab_id).addClass('active').siblings().removeClass('active')
     });
+
+    var hash = window.location.hash;
+    if (hash == '#listen-page'){
+        $('#listen-page').addClass('active').siblings().removeClass('active')
+        $('.track-fs-toggle-listen').addClass('active').siblings().removeClass('active');
+    }
 
     $(".step").click(function () {
         $(this).addClass('active')
@@ -67,5 +78,16 @@ $(document).ready(function () {
             position: "input",
             enabled: 0 // always opens dropdown when input gets focus
         }
+    })
+
+    // Audio Player
+    $('#listen-player').jsRapAudio({
+        src: "../assets/Laughing in the Dark.mp3",
+        loop: false,
+    });
+
+    var audio = $('#listen-player audio')[0];
+    $('.play').click(function() {
+        audio.play();
     })
 })

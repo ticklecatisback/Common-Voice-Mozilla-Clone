@@ -1,5 +1,5 @@
 /* main {
-    margin-top: 5rem;
+    padding-top: 5rem;
 } */
 
 button {
@@ -761,7 +761,7 @@ button {
   margin-inline-start: 9px;
   padding: 0 5px;
   position: absolute;
-  top: -8px;
+  margin-top: -8px;
   z-index: 1;
 }
 
@@ -787,14 +787,6 @@ button {
   display: inline-block;
   justify-content: center;
   margin-inline-end: 1rem;
-}
-
-.hr {
-  background-color: hsla(40, 6%, 90%, 0.6);
-  border: none;
-  height: 1.5px;
-  margin: 1.5rem 0;
-  width: 100%;
 }
 
 .checkbox-container .checkmark {

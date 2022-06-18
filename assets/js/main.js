@@ -90,4 +90,65 @@ $(document).ready(function () {
     $('.play').click(function() {
         audio.play();
     })
+
+    var oghtml = $('.instruction').html();
+
+    const recordButton = document.getElementById("recording-btn");
+
+    var audio_clip = $(".active > #recorded-clip");
+
+    // const recording = $("#recorded-clip");
+
+    $('#recording-btn').click(function() {
+        $('.progress').addClass('recording-animation')
+        $('#recording-icon').toggleClass('fa-square').toggleClass('fa-microphone')
+        if ($('#recording-icon').hasClass('fa-square')) {
+            $('.instruction').html('Click <i class="fa fa-square"></i> when done');
+        } else {
+            $('.instruction').html(oghtml);
+        }
+        navigator.mediaDevices.getUserMedia({ audio: true })
+        .then(function (stream) {
+            audio_stream = stream;
+            recorder = new MediaRecorder(stream);
+            // when there is data, compile into object for recording src
+            recorder.ondataavailable = function (e) {
+                const url = URL.createObjectURL(e.data);
+                audio_clip.attr('src',url);
+            };
+            recorder.start();
+            // stop recording
+            $(this).click(function() { 
+                // $(this,'.card').next().addClass('active').siblings().removeClass('active')
+                // $('.card.active').css({'transform': 'scale(1) translateX(0%)','opacity': 1})
+                stopRecording();
+                console.log("Recording stopped...!");
+            });
+        });
+        // if (audio_clip.attr('src') != 'unknown') {
+        //     $('.cards.owl-carousel').trigger('next.owl.carousel');
+        // }
+    })
+
+    function stopRecording() {
+        recorder.stop();
+        audio_stream.getAudioTracks()[0].stop();
+        $('.active .card').removeClass('inactive')
+        if ($('.owl-item.active')) {
+            $('.active .card').addClass('active').siblings().removeClass('active')
+        }
+        $('.cards.owl-carousel').trigger('next.owl.carousel');
+    }
+
+    // Owl Carousel
+    $(".cards.owl-carousel").owlCarousel({
+        items: 1,
+        dots: false,
+        autoplay: false,
+        rtl: true,
+        margin:120,
+        touchDrag:false,
+        mouseDrag:false
+    })
+
 })

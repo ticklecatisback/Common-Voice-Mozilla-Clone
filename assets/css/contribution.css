@@ -365,7 +365,8 @@
 }
 
 .contribution .instruction svg {
-  margin: 0 10px 0 16px;
+  color: #7a003c;
+  margin: 0 5px;
   width: 23px;
   height: 23px;
   vertical-align: text-top;
@@ -625,9 +626,14 @@
 
 .contribution .cards-and-instruction .card.inactive {
   pointer-events: none;
-  opacity: 0.5;
-  -webkit-filter: blur(6px);
-  filter: blur(6px);
+  opacity: 0.9;
+  -webkit-filter: blur(4px);
+  filter: blur(4px);
+  transform: scale(0.9);
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  -o-transform: scale(0.9);
 }
 
 @media (max-width: 767px) {
@@ -728,9 +734,16 @@
   width: 100%;
   height: 120px;
   left: 0;
-  margin-top: -80px;
+  margin-top: -120px;
   /* bottom: 100px; */
-  z-index: 0;
+  z-index: -1 !important;
+}
+
+.yes,
+.no,
+.play {
+  position: relative !important;
+  z-index: 4 !important;
 }
 
 .primary-buttons {
@@ -955,7 +968,7 @@
 
 @media (min-width: 992px) {
   .contribution .card-dimensions {
-    padding: 0 100px;
+    padding: 0 80px;
   }
 }
 
@@ -1278,6 +1291,10 @@
   background: linear-gradient(to right, #ff0080, #900149);
 }
 
+.primary-button.stop button {
+  color: #7a003c !important;
+}
+
 .primary-button:hover .background {
   opacity: 1 !important;
 }
@@ -1295,4 +1312,17 @@
 
 .button.outline:hover{
   border-color: black;
+}
+
+.owl-item {
+  min-width: 700px !important;
+  min-height: 350px !important;
+}
+
+.cards .owl-stage {
+  display: flex;
+}
+
+.cards .owl-stage-outer {
+  overflow: unset;
 }

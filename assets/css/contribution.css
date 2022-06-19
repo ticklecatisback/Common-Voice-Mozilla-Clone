@@ -73,7 +73,7 @@
   position: absolute;
   overflow-x: hidden;
   margin: 0 auto;
-  padding: 30px 20px;
+  padding: 30px 20px 30px 0;
   max-width: var(--wide-desktop-width);
   width: 100%;
   height: 100%;
@@ -81,7 +81,7 @@
 
 @media (min-width: 768px) {
   .contribution {
-    padding: 20px;
+    padding: 20px 20px 20px 0;
   }
 }
 
@@ -375,20 +375,23 @@
 .contribution .cards-and-pills {
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  min-height: 475px;
 }
 
 .contribution .cards-and-pills > :first-child {
   display: none;
-  -webkit-box-flex: 1;
+  /* -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
   -webkit-margin-end: auto;
-  margin-inline-end: auto;
+  margin-inline-end: auto; */
 }
 
 @media (min-width: 1200px) {
   .contribution .cards-and-pills > :first-child {
     display: block;
+    width: 90%;
+    overflow-x: hidden;
   }
 }
 
@@ -568,14 +571,14 @@
 
 .contribution .cards-and-instruction {
   height: 100%;
-  width: 100%;
+  width: 120%;
   margin-top: 30px;
 }
 
 @media (min-width: 1200px) {
   .contribution .cards-and-instruction {
     margin-top: 0;
-    max-width: 60%;
+    max-width: 120%;
   }
 }
 
@@ -643,11 +646,11 @@
 }
 
 @media (min-width: 768px) {
-  .contribution .pills {
+  /* .contribution .pills {
     -webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1;
-  }
+  } */
 }
 
 .contribution .pills .inner {

@@ -95,18 +95,21 @@ $(document).ready(function () {
 
     const recordButton = document.getElementById("recording-btn");
 
-    var audio_clip = $(".active > #recorded-clip");
+    var audio_clip = $(".active>#recorded-clip");
+
+    var recordingbtnhtml = `<button id="recording-btn" type="button">
+                            <i id="recording-icon" class="fa fa-microphone"></i>
+                            </button>
+                            <div class="background"></div>`
+
+    var stopbtnhtml =   '<button id="stop-btn" type="button"><i id="recording-icon" class="fa fa-square"></i></button><div class="background"></div>'
 
     // const recording = $("#recorded-clip");
 
     $('#recording-btn').click(function() {
-        $('.progress').addClass('recording-animation')
-        $('#recording-icon').toggleClass('fa-square').toggleClass('fa-microphone')
-        if ($('#recording-icon').hasClass('fa-square')) {
-            $('.instruction').html('Click <i class="fa fa-square"></i> when done');
-        } else {
-            $('.instruction').html(oghtml);
-        }
+        // $('.progress').addClass('recording-animation')
+        $('#record-btns').html(stopbtnhtml)
+        // $('#recording-icon').toggleClass('fa-square').toggleClass('fa-microphone')
         navigator.mediaDevices.getUserMedia({ audio: true })
         .then(function (stream) {
             audio_stream = stream;
@@ -118,25 +121,35 @@ $(document).ready(function () {
             };
             recorder.start();
             // stop recording
-            $(this).click(function() { 
-                // $(this,'.card').next().addClass('active').siblings().removeClass('active')
-                // $('.card.active').css({'transform': 'scale(1) translateX(0%)','opacity': 1})
-                stopRecording();
-                console.log("Recording stopped...!");
-            });
         });
         // if (audio_clip.attr('src') != 'unknown') {
         //     $('.cards.owl-carousel').trigger('next.owl.carousel');
         // }
+        $('#stop-btn').click(function() {
+            // $(this,'.card').next().addClass('active').siblings().removeClass('active')
+            // $('.card.active').css({'transform': 'scale(1) translateX(0%)','opacity': 1})
+            stopRecording();
+            $('#record-btns').html(recordingbtnhtml)
+            console.log("Recording stopped...!");
+        });
     })
+
+    if ($('#recording-icon').hasClass('fa-square')) {
+        $('.instruction').html('Click <i class="fa fa-square"></i> when done');
+    } else {
+        $('.instruction').html(oghtml);
+    }
 
     function stopRecording() {
         recorder.stop();
         audio_stream.getAudioTracks()[0].stop();
-        $('.active .card').removeClass('inactive')
-        if ($('.owl-item.active')) {
-            $('.active .card').addClass('active').siblings().removeClass('active')
-        }
+        // $('.active .card').removeClass('inactive')
+        setTimeout(() => {
+            if ($('.owl-item').hasClass('active')) {
+                $('.active>.card').removeClass('inactive')
+                $('.active>.card').addClass('active').siblings().removeClass('active')
+            }
+        }, 200);
         $('.cards.owl-carousel').trigger('next.owl.carousel');
     }
 
